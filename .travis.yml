@@ -1,6 +1,6 @@
 language: java
 jdk:
-- oraclejdk8
+- oraclejdk9
 cache:
   directories:
   - "$HOME/.m2"
@@ -9,7 +9,7 @@ services:
 - docker
 notifications:
   email:
-  - carnell28@gmail.com
+  - xyz0330@aliyun.com
   on_success: always
   on_failure: always
 branches:
