@@ -29,7 +29,7 @@ before_install:
 - sudo curl -k -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest
 - sudo chmod +x /usr/local/bin/ecs-cli
 - export BUILD_NAME=chapter10-$TRAVIS_BRANCH-$(date -u "+%Y%m%d%H%M%S")-$TRAVIS_BUILD_NUMBER
-- export CONTAINER_IP=3.17.6.117
+- export CONTAINER_IP=3.137.162.232
 - export PLATFORM_TEST_NAME="chapter10-platform-tests"
 script:
 - sh travis_scripts/tag_build.sh
