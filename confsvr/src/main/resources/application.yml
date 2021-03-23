@@ -7,8 +7,6 @@
 #
 #       -  A configuraton service that uses a git-based repository to read the files from
 #
-
-
 ####################################
 server:
   port: 8888
