@@ -18,7 +18,6 @@ import java.util.Map;
 @EnableEurekaClient
 @EnableResourceServer
 @EnableAuthorizationServer
-@RequestMapping(value="auth")
 public class Application {
     @RequestMapping(value = { "/user" }, produces = "application/json")
     public Map<String, Object> user(OAuth2Authentication user) {
