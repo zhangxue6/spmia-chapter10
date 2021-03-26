@@ -6,21 +6,21 @@ getPort() {
 echo "********************************************************"
 echo "Waiting for the eureka server to start on port $(getPort $EUREKASERVER_PORT)"
 echo "********************************************************"
-while ! `nc -z eurekaserver  $(getPort $EUREKASERVER_PORT)`; do sleep 3; done
+while ! `nc -z eurekaserver $EUREKASERVER_PORT`; do sleep 3; done
 echo "******* Eureka Server has started"
 
 
 echo "********************************************************"
 echo "Waiting for the configuration server to start on port $(getPort $CONFIGSERVER_PORT)"
 echo "********************************************************"
-while ! `nc -z configserver $(getPort $CONFIGSERVER_PORT)`; do sleep 3; done
+#while ! `nc -z configserver $CONFIGSERVER_PORT`; do sleep 3; done
 echo "*******  Configuration Server has started"
 
 
 echo "********************************************************"
 echo "Waiting for the kafka server to start on port  $(getPort $KAFKASERVER_PORT)"
 echo "********************************************************"
-while ! `nc -z kafkaserver  $(getPort $KAFKASERVER_PORT)`; do sleep 10; done
+while ! `nc -z kafkaserver $KAFKASERVER_PORT`; do sleep 10; done
 echo "******* Kafka Server has started"
 
 echo "********************************************************"

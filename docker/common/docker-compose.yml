@@ -13,6 +13,7 @@ configserver:
     links:
        - "eurekaserver:eurekaserver"
     environment:
+       EUREKASERVER_PORT: 8761
        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
        ENCRYPT_KEY:       "IMSYMMETRIC"
 
@@ -27,6 +28,8 @@ zuulserver:
     environment:
       PROFILE: "default"
       SERVER_PORT: "5555"
+      CONFIGSERVER_PORT: 8888
+      EUREKASERVER_PORT: 8761
       CONFIGSERVER_URI: "http://configserver:8888"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
 
@@ -44,11 +47,16 @@ licensingservice:
     environment:
       PROFILE: "aws-dev"
       SERVER_PORT: "8080"
+      ES_PORT:           9200
+      DATABASE_PORT:     5432
+      CONFIGSERVER_PORT: 8888
+      EUREKASERVER_PORT: 8761
+      AUTHSERVER_PORT:   8091
       CONFIGSERVER_URI: "http://configserver:8888"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       KAFKASERVER_URI: "kafkaserver"
       ZKSERVER_URI: "kafkaserver"
-      AUTHSERVER_URI:   "http://authenticationservice:8901/user"
+      AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
 authenticationservice:
@@ -63,6 +71,9 @@ authenticationservice:
     environment:
       PROFILE: "aws-dev"
       SERVER_PORT: "8901"
+      DATABASE_PORT:     5432
+      CONFIGSERVER_PORT: 8888
+      EUREKASERVER_PORT: 8761
       CONFIGSERVER_URI: "http://configserver:8888"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       ENCRYPT_KEY:       "IMSYMMETRIC"
@@ -81,11 +92,15 @@ organizationservice:
     environment:
       PROFILE: "aws-dev"
       SERVER_PORT: "8085"
+      DATABASE_PORT:     5432
+      CONFIGSERVER_PORT: 8888
+      EUREKASERVER_PORT: 8761
+      AUTHSERVER_PORT:   8091
       CONFIGSERVER_URI: "http://configserver:8888"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       KAFKASERVER_URI: "kafkaserver"
       ZKSERVER_URI: "kafkaserver"
-      AUTHSERVER_URI:   "http://authenticationservice:8901/user"
+      AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
 kafkaserver:

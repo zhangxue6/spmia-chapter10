@@ -6,7 +6,7 @@ getPort() {
 echo "********************************************************"
 echo "Waiting for the eureka server to start on port $(getPort $EUREKASERVER_PORT)"
 echo "********************************************************"
-while ! `nc -z eurekaserver  $(getPort $EUREKASERVER_PORT)`; do sleep 3; done
+while ! `nc -z eurekaserver $EUREKASERVER_PORT`; do sleep 3; done
 echo "******* Eureka Server has started"
 
 echo "********************************************************"
