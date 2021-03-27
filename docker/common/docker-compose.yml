@@ -52,6 +52,7 @@ licensingservice:
       CONFIGSERVER_PORT: 8888
       EUREKASERVER_PORT: 8761
       AUTHSERVER_PORT:   8091
+      KAFKASERVER_PORT:  2181
       CONFIGSERVER_URI: "http://configserver:8888"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       KAFKASERVER_URI: "kafkaserver"
