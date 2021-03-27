@@ -56,7 +56,7 @@ licensingservice:
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       KAFKASERVER_URI: "kafkaserver"
       ZKSERVER_URI: "kafkaserver"
-      AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
+      AUTHSERVER_URI:   "http://authenticationservice:8901/user"
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
 authenticationservice:
@@ -100,7 +100,7 @@ organizationservice:
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       KAFKASERVER_URI: "kafkaserver"
       ZKSERVER_URI: "kafkaserver"
-      AUTHSERVER_URI:   "http://authenticationservice:8901/auth/user"
+      AUTHSERVER_URI:   "http://authenticationservice:8901/user"
       ENCRYPT_KEY:       "IMSYMMETRIC"
 
 kafkaserver:
