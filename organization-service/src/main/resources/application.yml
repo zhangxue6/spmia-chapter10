@@ -13,7 +13,7 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: http://localhost:8901/auth/user
+      userInfoUri: http://localhost:8901/user
 
 #Setting the logging levels for the service
 logging:
